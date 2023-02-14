@@ -49,7 +49,17 @@
                     <div class="alert alert-danger" role="alert">
                         <p>Results: <i class="bi bi-hand-thumbs-down-fill"></i> Using only keyboard keys to navigate the MPL website was very difficult. We could not open the sub-pages in the main navigation using our keyboard keys. There was no <a href="https://www.w3schools.com/accessibility/accessibility_skip_links.php">Skip to Main</a> feature that allows keyboard users to quickly skip to the main content section. Furthermore, Keyboard Focus was not obvious to us when we were using our tab and arrow keys. There was no way to differentiate which links were being tabbed to (i.e. bolding or highlighting the text or section) aside from the main, top navigation links (i.e. Home, About, Events, Spaces, Books & More, Services) changing to a boldened orange text. But this is not acceptable as it is hard to notice when using keyboard navigation functions. We recommend that the web team explore to make the MPL website more keyboard-only friendly.</p>
                     </div>
-
+                <h4>Forms, labels, and errors (including Search fields): </h4>
+                Users are able to keyboard navigate to the different forms fields.
+                Each form control has a label element with a for attribute that matches the value of the id attribute in the related control. For example:
+                <ul>
+                    <li>Each form control has a <code>label</code> element with a <code>for</code> attribute that matches the value of the <code>id</code> attribute in the related control. For example:<br>
+                    <code>&lt;label for="firstname"&gt;First Name: &lt;/label&gt;<br>
+                    &lt;input type="text" name="firstname" id="firstname" /&gt;<br>
+                </code> </li>
+                <li>Each <code>id</code> is unique within the webpage.</li>
+                </ul>
+                
         </div>
     </body>
 </html>
