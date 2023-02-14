@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Accessibility Testing: Homework 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+
+        <!-- Bootstrap CSS Code -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <!--Main Container Div that provides padding -->
+        <div class="container">
+            <h1>Accessibility Testing on McAllen Public Library (MPL) Website</h1>
+            <p>
+                Name: Christine Gonzales Severn <br>
+                Class Project: Accessibility Testing <br>
+                Website: <a href="https://mcallenlibrary.net">https://mcallenlibrary.net/</a> <br>
+                Date: February 12, 2023
+            </p>
+            <p>
+                <p>I hope this message finds you well. My name is Christine Severn and I am currently studying at the Univerity of Denver. In our coursework, we're learning the importance of digital accessibility and methods on how to ensure that web content is accessible for people that use assistive technologies on their computer or mobile device. </p>
+                <p>The purpose of this report is to help identify possible website digital accessibility issues in order to prevent any access issues to this website via assistive technologies. The following accessibility checklist is based on the <a href="https://www.w3.org/WAI/test-evaluate/priliminary/">WC3 WAI Easy Checks - A First Review of Web Accessiblity</a> We hope you find our report helpful and thank you very much for taking the time to consider our recommendations.</p>
+                <h2>Accessibility checklist</h2>
+                <h3>Website Page Titles</h3>
+                <p>In the web page markup, the <code>&lt;title&gt;</code> is within the <code>&lt;head&gt;</code> tag. Good page titles are particularly important for orientation, they help people know where they are and move between pages open in their browser tab. The first thing screen readers say when the user goes to a different web page is the page title.</p>
+                <!-- green success class -->
+                <p class="alert alert-success" role="alert">Results: <i class="bi bi-hand-thumbs-up-fill"></i> 10 pages on the MPL website were evaluated for clear, unique HTML page titles. Each page has descriptive HTML title values. However, we do suggest that the title values have to be formatted as "Page Title at MPL", for example, "Study Rooms at MPL" so that it's obvious to users using the assistive technologies what website page they are on.</p>
+                <h3>Image Text Alternatives</h3>
+                <p>Image text alternatives ("alt text") (pictures, illustrations, charts, etc.) Text alternatives convey the purpose of an image, including pictures, illustrations, charts, etc. The alt attribute provides an alternative text for an image, if the user for some reason cannot view it. The reason can be a slow connection, an error with the image file, or if the user uses a screen reader. </p>
+                <p class="alert alert-danger" role="alert">Results: <i class="bi bi-hand-thumbs-down-fill"></i> No photos on the Homepage, Events, and Spaces pages had descriptive alt text. This means that people using assistive technologies would not know what the photo or graphic is communicating. We recommend that all photos and graphics have descriptive alt text.</p>
+                <h3>Text:</h3>
+                Headings, Contrast Ratio ("color contrast") and Resizing Text should not only support visual aesthetics but also support the navigation and visibility of text content.
+                <p class="alert alert-danger" role="alert">Results - Headings <i class="bi- bi-hand-thumbs-down-fill"></i>
+                    We tested the About, Events, and Spaces pages and headings tags are not really nested in a heirarchical system. It appears headdings are used more for font functions then a heirarchical system of pages and information. 
+                    The MPL homepage has 2 H1 tags, there should only be one H1 per page because screen readers expect only one H1 tag. </p>
+
+                    <div class="alert alert-danger" role="alert">Results - Contrast Ratio <i class="bi bi-hand-thumbs-down-fill"></i> We tested the Homepage, Services, and Events pages and there was low color contrast because the pages are white and the headings are in bright or neutral colors (i.e. orange, blue, teal, etc.). The WAVE color contrast tester did flag these pages as a color contrast issue because of the white background and orange or teal/blue text. Also, the white text on the Homepage header image does not comply with color contrast suggestions as the image header is a carousel and the overlying text does not adequately contrast with the carousel images. Suggestion is to make the text a darker, more contrasting color or to update the image carousel and navigation options so they are not overlapping.</p>
+                    </div>
+                    
+                    <div class="alert alert-danger" role="alert">
+                        <p>Results - Resizing Text <i class="bi bi-hand-thumbs-down-fill"></i>The MPL website testing done with the WAVE text size tester shows failed results for text sizing and resizing. The text for the Homepage does not increase or adjust reeadability for desktop or mobile devices which can cause issues for those with visual disabilities. </p>
+                        </div>
+                    <h3>Interaction:</h3>
+                    <h4>Keyboard access and visual focus</h4>
+                    <p>Many people cannot use a mouse and rely on a keyboard to interact with web pages. Keyboard focus should follow a logical order through the page elements. Visible keyboard focus could be a border or highlight.</p>
+                    <!-- red success div -->
+                    <div class="alert alert-danger" role="alert">
+                        <p>Results: <i class="bi bi-hand-thumbs-down-fill"></i> Using only keyboard keys to navigate the MPL website was very difficult. We could not open the sub-pages in the main navigation using our keyboard keys. There was no <a href="https://www.w3schools.com/accessibility/accessibility_skip_links.php">Skip to Main</a> feature that allows keyboard users to quickly skip to the main content section. Furthermore, Keyboard Focus was not obvious to us when we were using our tab and arrow keys. There was no way to differentiate which links were being tabbed to (i.e. bolding or highlighting the text or section) aside from the main, top navigation links (i.e. Home, About, Events, Spaces, Books & More, Services) changing to a boldened orange text. But this is not acceptable as it is hard to notice when using keyboard navigation functions. We recommend that the web team explore to make the MPL website more keyboard-only friendly.</p>
+                    </div>
+                <h4>Forms, labels, and errors (including Search fields): </h4>
+                Users are able to keyboard navigate to the different forms fields.
+                Each form control has a label element with a for attribute that matches the value of the id attribute in the related control. For example:
+                <ul>
+                    <li>Each form control has a <code>label</code> element with a <code>for</code> attribute that matches the value of the <code>id</code> attribute in the related control. For example:<br>
+                    <code>&lt;label for="firstname"&gt;First Name: &lt;/label&gt;<br>
+                    &lt;input type="text" name="firstname" id="firstname" /&gt;<br>
+                </code> </li>
+                <li>Each <code>id</code> is unique within the webpage.</li>
+                </ul>
+                <div class="alert alert-warning" role="alert">
+                    <p>Results <i class="bi bi-hand-thumbs-up-fill"></i> <i class="bi bi-hand-thumbs-down-fill"></i>
+                    We tested the Reserve a Room page because it has a form.
+                    Using only the keyboard, we were able to go to each form field and press submit. 
+                    However, we were not able to toggle back and forth, only forward on the page using only keyboard navigation tools.</p>
+                </div>
+        </div>
+    </body>
+</html>
